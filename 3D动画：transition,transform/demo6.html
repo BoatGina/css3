@@ -1,0 +1,129 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#big{
+			-webkit-perspective:800;
+			-webkit-perspective-origin:50% 50%;
+			
+			overflow: hidden;
+		}
+		#small{
+			width: 400px;
+			height: 400px;
+			margin: 0 auto;
+			position: relative;
+			-webkit-transform-style:preserve-3d;
+		}
+		.group{
+			width: 360px;
+			height: 360px;
+			line-height: 360px;
+			padding: 20px;
+			background-color: #000;
+			color: #fff;
+			text-align: center;
+			font-size: 300px;
+			position: absolute;
+			
+		}
+		#btn{
+			width: 500px;
+			height: auto;
+			margin:20px auto;
+			text-align: center;
+		}
+		#number1{
+		    -webkit-transform-origin:bottom;
+		    -webkit-transition: -webkit-transform 1s linear;
+		}
+		#number2,#number3,#number4,#number5,#number6{
+		    -webkit-transform-origin:bottom;
+		    -webkit-transition: -webkit-transform 1s linear;
+		    -webkit-transform: rotateX(90deg);
+		}
+
+	</style>
+	<script type="text/javascript">
+		var index=1;
+
+		/*function next(){
+			if(index==6){
+				return;
+			}
+			var cur=document.getElementById("number"+index);
+			cur.style.webkitTransform="rotateX(-90deg)";
+
+			index++;
+
+			var next=document.getElementById("number"+index);
+			next.style.webkitTransform="rotateX(0deg)";
+		}
+
+		function pre(){
+			if(index==1){
+				return;
+			}
+			var cur=document.getElementById("number"+index);
+			cur.style.webkitTransform="rotateX(90deg)";
+
+			index--;
+
+			var pre=document.getElementById("number"+index);
+			pre.style.webkitTransform="rotateX(0deg)";
+		}
+*/
+
+		function change(){
+			var angle=arguments[0]<0?-90:90;
+			if(arguments[0]<0){
+				if(index==6) return;
+			}
+			else if (arguments[0]>0){
+				if(index==1) return;
+			}
+			/*arguments[0]<0?(if(index==6) return):(if(index==1) return);*/
+			/*arguments[0]<0?(index==6?return):(index==1?return);*/
+			/*if((index+1)>6||(index-1)<1){
+				alert(2);
+				return;
+			}*/
+			var cur=document.getElementById("number"+index);
+			cur.style.webkitTransform="rotateX(angle+'deg')";
+			/*if(arguments[0]<0){
+				index++;
+			}
+			else{
+				index--;
+			}*/
+			arguments[0]<0?index++:(index--);
+			var btn=document.getElementById("number"+index);
+			btn.style.webkitTransform="rotateX(0deg)";
+		}
+
+		/*合并函数出现的问题：
+		1.transition的效果不管用了
+		2.当点击到边缘的时候，由于获取不到下一个index而报错，但这可以减少边缘判断的语句[解决]
+		3.pre不管用了
+		*/
+	</script>
+</head>
+<body>
+	<div id="big">
+		<div id="small">
+			<div class="group" id="number1">1</div>
+			<div class="group" id="number2">2</div>
+			<div class="group" id="number3">3</div>
+			<div class="group" id="number4">4</div>
+			<div class="group" id="number5">5</div>
+			<div class="group" id="number6">6</div>
+		</div>
+	</div>
+	<div id="btn">
+		<a href="javascript:change(-1);" id="next">next</a>
+		<a href="javascript:change(1);" id="pre">pre</a>
+	</div>
+</body>
+</html>

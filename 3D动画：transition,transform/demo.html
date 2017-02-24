@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transiton</title>
+</head>
+<style type="text/css">
+	*{
+		padding:0;
+		margin: 0;
+	}
+	div{
+		background-color: blue;
+		width: 100px;
+		height: 100px;
+	}
+	div:hover{
+		width: 900px;
+	}
+	div#linear{
+		-webkit-transition:width 3s linear;
+		-moz-transition:width 3s linear;
+	}
+	div#ease{
+		-webkit-transition:width 3s ease;
+		-moz-transition:width 3s linear;
+	}
+	div#ease-in{
+		-webkit-transition:width 3s ease-in;
+		-moz-transition:width 3s linear;
+	}
+	div#ease-out{
+		-webkit-transition:width 3s ease-out;
+		-moz-transition:width 3s linear;
+	}
+	div#ease-in-out{
+		-webkit-transition:width 3s ease-in-out;
+		-moz-transition:width 3s linear;
+	}
+
+</style>
+<body>
+	<p>linear</p>
+	<div id="linear"></div>
+	<p>ease</p>
+	<div id="ease"></div>
+	<p>ease-in</p>
+	<div id="ease-in"></div>
+	<p>ease-out</p>
+	<div id="ease-out"></div>
+	<p>ease-in-out</p>
+	<div id="ease-in-out"></div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#big{
+			-webkit-perspective:800;
+			-webkit-perspective-origin:50% 50%;
+			-webkit-transform-style:-webkit-perspective-3d;
+			-webkit-transition: -webkit-transform 1s linear;
+		}
+		#small{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			margin: 50px auto;
+		}
+		#btns{
+			margin: 50px auto;
+			height: auto;
+			width:600px;
+		}
+		input{
+			width: 600px;
+			height: auto;
+			
+		}
+
+	</style>
+	<script type="text/javascript">
+	function translateall(){
+		var x=document.getElementById("input1").value;
+		var y=document.getElementById("input2").value;
+		var z=document.getElementById("input3").value;
+
+		document.getElementById("small").style.webkitTransform="rotateX("+x+"deg)  rotateY("+y+"deg)  rotateZ("+z+"deg)";
+		//双引号要注意！！！
+
+		document.getElementById("span1").innerText=x;
+		document.getElementById("span2").innerText=y;
+		document.getElementById("span3").innerText=z;
+
+		
+	}
+	
+
+	</script>
+</head>
+<body>
+	<div id="big">
+		<div id="small"></div>
+	</div>
+	<div id="btns">
+		<p>rotateX:<span id="span1">0</span>deg</p>
+		<input type="range" min="-360" max="360" value="0" class="translate_inputs" id="input1" onchange="translateall()"><br/>
+		<p>rotateY:<span id="span2">0</span>deg</p>
+		<input type="range" min="-360" max="360" value="0" class="translate_inputs" id="input2" onchange="translateall()"><br/>
+		<p>rotateZ:<span id="span3">0</span>deg</p>
+		<input type="range" min="-360" max="360" value="0" class="translate_inputs" id="input3" onchange="translateall()"><br/>
+	</div>
+</body>
+</html>

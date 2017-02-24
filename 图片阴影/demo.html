@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#pic1{
+			width: 550px;
+			height:250px;
+			text-align: center;
+			line-height: 300px;
+			font-size: 72px;
+			font-weight: bold;
+			background-color: #fff;
+			margin: 10px auto;
+			position: relative;
+			box-shadow: 0 0 20px rgba(0,0,0,0.2),0 0 80px rgba(0,0,0,0.1) inset;
+			-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2),0 0 80px rgba(0,0,0,0.1) inset;
+		}
+		#pic1:before{
+			content: " ";
+			z-index: -1;
+			position: absolute;
+			top: 50%;
+			bottom: 0;
+			left: 20px;
+			right:20px;
+			background-color: red;
+			border-radius: 20px;
+			box-shadow: 0 0 45px rgba(0,0,0,0.4);
+		}
+		ul{
+			list-style-type: none;
+			clear: both;
+		}
+		ul li{
+			float: left;
+			width: 300px;
+			height: 200px;
+			padding: 10px;
+			border:#eee solid 1px;
+			margin: 50px;
+			position: relative;
+			background-color: #fff;
+			-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+		}
+		img{
+			width: 300px;
+			height: 200px;
+		}
+		li:before{
+			content: " ";
+			position: absolute;
+			width: 270px;
+			height:150px;
+			left: 25px;
+			bottom: 5px;
+			/* z-index: -1; */
+			background-color: red;
+			-webkit-box-shadow: 0 0 30px rgba(0,0,0,0.4);
+			-webkit-transform:skew(-20deg) rotate(-2deg);
+		}
+	</style>
+</head>
+<body>
+	<div id="pic1">Shadow Effect</div>
+	<ul>
+		<li><img src="images/photo1.jpg"></li>
+		<li><img src="images/photo2.jpg"></li>
+		<li><img src="images/photo3.jpg"></li>
+	</ul>
+</body>
+</html>

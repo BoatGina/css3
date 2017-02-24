@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#big{
+			-webkit-perspective:800;
+			-webkit-perspective-origin:50% 50%;
+			-webkit-transform-style:-webkit-perspective-3d;
+			position: relative;
+		}
+		#small{
+			overflow: hidden;
+			position: relative;
+			display: inline-block;
+			width: 400px;
+			height: 400px;
+			margin:0 auto;
+		}
+		#small li{
+			position: absolute;
+			display: inline-block;
+			width: 360px;
+			height: 360px;
+			padding: 20px;
+			background-color: #000;
+			color: #fff;
+			text-align: center;
+			font-size:300px;
+			font-weight: bold;
+		}
+		#btns{
+			width: 500px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="big">
+			<ul id="small">
+				<li id="li1">1</li>
+				<li id="li2">2</li>
+				<li id="li3">3</li>
+				<li id="li4">4</li>
+				<li id="li5">5</li>
+				<li id="li6">6</li>
+			</ul>
+	</div>
+	<div id="btns">
+		<a href="javascript:next()">next</a>
+		<a href="javascript:pre()">previous</a>
+	</div>
+</body>
+</html>
